@@ -1,29 +1,29 @@
 import com.objetos.Coche;
 import com.objetos.Deportivo;
-import java.util.ArrayList;
+
 
 
 public class Conductor {
     public static void main(String[] args) throws Exception {
 
-        // Coche car = new Coche();
-        // car.setMarca("BMW");
-        // car.setModelo("M3");
-        // car.arrancar();
-        // car.acelerar();
-        // car.acelerar();
-        // car.acelerar();
-        // car.acelerar();
-        // car.acelerar();
-        // car.acelerar();
-        // car.frenar();
-        // car.frenar();
-        // car.frenar();
-        // car.frenar(true);
-        // car.acelerar();
-        // car.arrancar();
-        // car.acelerar();
-        // System.out.println(car);
+        Coche car = new Coche();
+        car.setMarca("BMW");
+        car.setModelo("M3");
+        car.arrancar();
+        car.acelerar();
+        car.acelerar();
+        car.acelerar();
+        car.acelerar();
+        car.acelerar();
+        car.acelerar();
+        car.frenar();
+        car.frenar();
+        car.frenar();
+        car.frenar(true);
+        car.acelerar();
+        car.arrancar();
+        car.acelerar();
+        System.out.println(car);
 
 
         System.out.println("\n\n");
