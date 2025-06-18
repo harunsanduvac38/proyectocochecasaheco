@@ -6,30 +6,40 @@ import java.util.ArrayList;
 public class Conductor {
     public static void main(String[] args) throws Exception {
 
+        // Coche car = new Coche();
+        // car.setMarca("BMW");
+        // car.setModelo("M3");
+        // car.arrancar();
+        // car.acelerar();
+        // car.acelerar();
+        // car.acelerar();
+        // car.acelerar();
+        // car.acelerar();
+        // car.acelerar();
+        // car.frenar();
+        // car.frenar();
+        // car.frenar();
+        // car.frenar(true);
+        // car.acelerar();
+        // car.arrancar();
+        // car.acelerar();
+        // System.out.println(car);
 
-        ArrayList<Coche> coches = new ArrayList<Coche>();
 
-        Coche coche1 = new Coche("BMW", "M3");
-        Coche coche2 = new Coche("Mercedes", "C200");
-        Deportivo coche3 = new Deportivo("Ferrari", "F40");
-        Deportivo coche4 = new Deportivo("Bugatti", "Veyron");
+        System.out.println("\n\n");
 
-        coches.add(coche1);
-        coches.add(coche2);
-        coches.add(coche3);
-        coches.add(coche4);
+        Deportivo car2 = new Deportivo();
+        car2.setMarca("Ferrari");
+        car2.setModelo("F40");
+        car2.arrancar();
+        car2.acelerar();
+        
+        System.out.println(car2);
 
-        coche1.arrancar();
-
-        coche1.acelerar();
-        coche1.acelerar();
-        coche1.frenar();
-        coche1.frenar();
-        coche1.frenar();
-        coche1.frenar();
-        coche1.frenar();
-
-        System.out.println(coche1.toString());
     }    
+
+
+
+
        
 }

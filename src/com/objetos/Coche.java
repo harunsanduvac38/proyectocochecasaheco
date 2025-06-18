@@ -2,26 +2,35 @@ package com.objetos;
 
 public class Coche {
 
-    private String marca;
-    private String modelo;
-    protected int velocidad;
-    protected int velocidadMax;
-    public boolean cocheArrancado;
-
-    public Coche(String marca, String modelo){
+    public Coche() {
         this.velocidad = 0;
-        this.velocidadMax = 180;
         this.cocheArrancado = false;
-        this.marca = marca;
-        this.modelo = modelo;
+        this.velocidadMax = 180;
         
     }
 
+    
 
-    @Override
-    public String toString() {
-        return "El coche: " + this.marca + " " + this.modelo + 
-                 " y la velocidad actual: " + this.velocidad;
+    private String marca;
+    private String modelo;
+    private int velocidad;
+    private int velocidadMax;
+    protected boolean cocheArrancado;
+
+    public int getVelocidad() {
+        return this.velocidad;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public int getVelocidadMax() {
+        return this.velocidadMax;
+    }
+
+    public void setVelocidadMax(int velocidadMax) {
+        this.velocidadMax = velocidadMax;
     }
 
 
@@ -39,6 +48,13 @@ public class Coche {
         this.modelo = modelo;
     }
 
+    @Override
+    public String toString() {
+        return "El coche: " + this.marca + " " + this.modelo + 
+                 " y la velocidad actual: " + this.velocidad;
+    }
+
+
     public void arrancar() {
         if(this.cocheArrancado) {
             System.out.println("El coche ya está arrancado!");
@@ -48,29 +64,38 @@ public class Coche {
         }
     }
 
-    public void acelerar() {
-        if(!cocheArrancado) {
-            System.out.println("Arranca el coche, luego acelera!!");
+   
+    public int acelerar() {
+        //No podemos acelerar si el coche no ha arrancado
+        if (this.cocheArrancado == false){
+            System.out.println("Debe arrancar el coche primero");
+            return 0;
         }else {
             this.velocidad += 20;
-            if(this.velocidad >= this.velocidadMax) {
+            if (this.velocidad > this.velocidadMax){
                 this.velocidad = this.velocidadMax;
-                System.out.println("Conduces con max velocidad " + this.velocidadMax + " km/h.");
-            }else {
-                System.out.println("Accelerando " + this.velocidad + " km/h.");
             }
+            return this.velocidad;
         }
     }
 
 
 
-    public void frenar() {
-        if(this.velocidad == 0) {
+
+    public int frenar() {
+        this.velocidad -= 10;
+        if(this.getVelocidad() <= 0) {
+            this.setVelocidad(0);
             System.out.println("El coche ya está parado!");
-        }else {
-            this.velocidad -= 10;
-            System.out.println("La velocidad ha bajado a " + this.velocidad + " km/h.");
         }
+        return this.velocidad;
+    }
+
+    public int frenar(boolean atopoe) {
+        System.out.println("Frenado a tope y apagado!");
+        this.velocidad = 0;
+        this.cocheArrancado = false;
+        return 0;
     }
     
 }

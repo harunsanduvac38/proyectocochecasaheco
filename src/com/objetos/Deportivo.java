@@ -2,30 +2,32 @@ package com.objetos;
 
 public class Deportivo extends Coche {
 
-    public Deportivo(String marca, String modelo) {
-        super(marca, modelo);
-        this.velocidadMax = super.velocidadMax + 140;
+    public Deportivo() {
+        
+        this.setVelocidadMax(super.getVelocidadMax() + 140);
     }
 
-    public void turbo() {
-        this.velocidad += 40;
-        if(this.velocidad == this.velocidadMax) {
-            this.velocidad = this.velocidadMax;
-            System.out.println("Conduces con velocidad Max: " + this.velocidad + " km/h");
-        }else {
-            System.out.println("Con turbo!! " + this.velocidad + "km/h");
+    public int turbo() {
+        
+        this.setVelocidad(this.getVelocidad() + 40);
+        if(this.getVelocidad() >= this.getVelocidadMax()) {
+            this.setVelocidad(this.getVelocidadMax());
         }
+        return this.getVelocidad();
     }
 
 
     @Override
-    public void acelerar() {
-        this.velocidad += 50;
-        if(this.velocidad >= this.velocidadMax) {
-            this.velocidad = this.velocidadMax;
-            System.out.println("Conduces con la velocidad Max: " + this.velocidad + " km/h");
+    public int acelerar() {
+        if(this.cocheArrancado == false) {
+            System.out.println("Debe arrancar el coche primero");
+            return 0;
         }else {
-            System.out.println("Accelerando " + this.velocidad + " km/h");
+            this.setVelocidad(this.getVelocidad() + 50);      
+            if(this.getVelocidad() >= this.getVelocidadMax()) {
+                this.setVelocidad(getVelocidadMax());
+            }
+            return this.getVelocidad();
         }
     }
     
